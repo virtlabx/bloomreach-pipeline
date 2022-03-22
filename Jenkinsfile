@@ -16,6 +16,9 @@ node('master') {
   cleanWs()
   stage("Clone simple app"){
     sh("git clone https://github.com/virtlabx/content-sre-assignment.git")
+    dir("content-sre-assignment"){
+      sh("git checkout " + env.branch)
+    }
   }
 
   stage("Build docker image") {
