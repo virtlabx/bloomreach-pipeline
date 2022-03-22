@@ -7,7 +7,7 @@ This pipeline is doing the following:
 - Clone simple app repository. [https://github.com/virtlabx/content-sre-assignment.git](https://github.com/virtlabx/content-sre-assignment.git)
 - Build the docker image.
 - Push the docker image To AWS ECR.
-- Clean Up the docker image on jenkins build master node to save the space.
+- Cleanup the docker image on jenkins build master node to save the space.
 
 To run this pipeline, just click build now button! 
 
