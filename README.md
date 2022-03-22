@@ -12,3 +12,9 @@ This pipeline is doing the following:
 To run this pipeline, just click build now button! 
 
 [http://63.32.236.168:8080/job/Bloomreach/job/bloomreach-simple-app/](http://63.32.236.168:8080/job/Bloomreach/job/bloomreach-simple-app/)
+
+You also should specify the branch that you are using as it is a should be passed as a parameter to the pipeline.
+
+The default is master branch, but you still can create the docker image from a differnet content-sre-assignment branch as well.
+
+To test that, use "testing-pipeline-env" which is the branch that I create in content-sre-assignment project.
