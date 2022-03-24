@@ -11,7 +11,7 @@ This pipeline is doing the following:
 
 To run this pipeline, just click build now button! 
 
-[http://63.32.236.168:8080/job/Bloomreach/job/bloomreach-simple-app/](http://63.32.236.168:8080/job/Bloomreach/job/bloomreach-simple-app/)
+[http://www.jenkins-vault-bloomreach.com:8080/job/Bloomreach/job/bloomreach-simple-app](http://www.jenkins-vault-bloomreach.com:8080/job/Bloomreach/job/bloomreach-simple-app/)
 
 You also should specify the branch that you are using as it is a should be passed as a parameter to the pipeline.
 
