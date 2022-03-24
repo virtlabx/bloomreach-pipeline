@@ -8,10 +8,11 @@ This pipeline is doing the following:
 - Build the docker image.
 - Push the docker image To AWS ECR.
 - Cleanup the docker image on jenkins build master node to save the space.
+- Send an email in case of the build failure. 
 
 To run this pipeline, just click build now button! 
 
-[http://www.jenkins-vault-bloomreach.com:8080/job/Bloomreach/job/bloomreach-simple-app](http://www.jenkins-vault-bloomreach.com:8080/job/Bloomreach/job/bloomreach-simple-app/)
+[https://jenkins-vault-bloomreach.com/job/Bloomreach/job/bloomreach-simple-app](https://jenkins-vault-bloomreach.com/job/Bloomreach/job/bloomreach-simple-app)
 
 You also should specify the branch that you are using as it is a should be passed as a parameter to the pipeline.
 
