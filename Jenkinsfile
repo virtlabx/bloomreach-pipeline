@@ -46,7 +46,7 @@ node('master') {
     sh("docker rmi " + awsEcrRepoUrl + "/" + tag)
     sh("docker rmi " + awsEcrRepoUrl + "/" + tagLatest)
   }
-  if (currentBuild.currentResult == 'SUCCESS') {
+  if (currentBuild.currentResult == 'FAILURE') {
     emailext (
       to: 'elawdanaya@gmail.com',
       subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
