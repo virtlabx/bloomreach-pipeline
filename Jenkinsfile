@@ -47,14 +47,11 @@ node('master') {
     sh("docker rmi " + awsEcrRepoUrl + "/" + tagLatest)
   }
   if (currentBuild.currentResult == 'SUCCESS') {
-    emailext subject: 'Build Failure',
-      body: 'Jenkins build failed. Please fix it.',
-      recipientProviders: [
-        [$class: 'CulpritsRecipientProvider'],
-        [$class: 'DevelopersRecipientProvider'],
-        [$class: 'RequesterRecipientProvider']
-      ], 
-      replyTo: 'elawdanaya@gmail.com',
-      to: 'elawdanaya@gmail.com'
+    emailext (
+      subject: "FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]'",
+      body: """<p>FAILED: Job '${env.JOB_NAME} [${env.BUILD_NUMBER}]':</p>
+        <p>Check console output at &QUOT;<a href='${env.BUILD_URL}'>${env.JOB_NAME} [${env.BUILD_NUMBER}]</a>&QUOT;</p>""",
+      recipientProviders: [[$class: 'DevelopersRecipientProvider']]
+    )
   }
 }
