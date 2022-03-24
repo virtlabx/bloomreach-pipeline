@@ -46,4 +46,15 @@ node('master') {
     sh("docker rmi " + awsEcrRepoUrl + "/" + tag)
     sh("docker rmi " + awsEcrRepoUrl + "/" + tagLatest)
   }
+  if (currentBuild.currentResult == 'SUCCESS') {
+    emailext subject: 'Build Failure',
+      body: 'Jenkins build failed. Please fix it.',
+      recipientProviders: [
+        [$class: 'CulpritsRecipientProvider'],
+        [$class: 'DevelopersRecipientProvider'],
+        [$class: 'RequesterRecipientProvider']
+      ], 
+      replyTo: 'elawdanaya@gmail.com',
+      to: 'elawdanaya@gmail.com'
+  }
 }
